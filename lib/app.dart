@@ -11,6 +11,9 @@ class TaskMangerApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorSchemeSeed: Colors.grey,
+        textTheme: TextTheme(
+          titleLarge: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+        ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
           fillColor: Colors.white,
