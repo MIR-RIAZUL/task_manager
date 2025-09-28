@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:task_manager/UI/widgets/screen_backround.dart';
 
 import 'Sign_up_screen.dart';
+import 'fotgot_password_verify_OTP_screen.dart';
 
 class ForgotPasswordVerifyEmailScreen extends StatefulWidget {
   const ForgotPasswordVerifyEmailScreen({super.key});
@@ -47,11 +48,10 @@ class _ForgotPasswordVerifyEmailScreenState
 
                     decoration: InputDecoration(hintText: "Email"),
                   ),
-                  const SizedBox(height: 10),
 
                   const SizedBox(height: 20),
                   FilledButton(
-                    onPressed: () {},
+                    onPressed: _onNextButton,
                     child: Icon(Icons.arrow_circle_right_outlined),
                   ),
                   const SizedBox(height: 36),
@@ -62,13 +62,15 @@ class _ForgotPasswordVerifyEmailScreenState
                           color: Colors.black,
                           fontWeight: FontWeight.w600,
                         ),
-                        text: "Don't have an account? ",
+                        text:
+                            ""
+                            "Already have an account? ",
                         children: [
                           TextSpan(
-                            text: "Sign Up",
+                            text: "Login",
                             style: TextStyle(color: Colors.green),
                             recognizer: TapGestureRecognizer()
-                              ..onTap = _onTapSignUpButton,
+                              ..onTap = _onLoginUpButton,
                           ),
                         ],
                       ),
@@ -83,12 +85,16 @@ class _ForgotPasswordVerifyEmailScreenState
     );
   }
 
-  void _onTapSignUpButton() {
+  void _onLoginUpButton() {
+    Navigator.pop(context);
+  }
+
+  void _onNextButton() {
     // Navigate to the Sign Up screen
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => SignUpScreen(),
+        builder: (context) => ForgotPasswordVerifyOTPScreen(),
       ), // Replace with actual SignUpScreen
     );
   }
