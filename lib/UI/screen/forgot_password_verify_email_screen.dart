@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/UI/widgets/screen_backround.dart';
 
-import 'Sign_up_screen.dart';
 import 'fotgot_password_verify_OTP_screen.dart';
 
 class ForgotPasswordVerifyEmailScreen extends StatefulWidget {
