@@ -1,10 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:task_manager/UI/screen/reset_password_screen.dart';
 import 'package:task_manager/UI/widgets/screen_backround.dart';
-
-import 'Sign_up_screen.dart';
-import 'login_screen.dart';
 
 class ForgotPasswordVerifyOTPScreen extends StatefulWidget {
   const ForgotPasswordVerifyOTPScreen({super.key});
@@ -68,8 +66,8 @@ class _ForgotPasswordVerifyOTPScreenState
 
                   const SizedBox(height: 20),
                   FilledButton(
-                    onPressed: () {},
-                    child: Icon(Icons.arrow_circle_right_outlined),
+                    onPressed: _onTapverifyButton,
+                    child: Text('verify'),
                   ),
                   const SizedBox(height: 36),
                   Center(
@@ -105,7 +103,18 @@ class _ForgotPasswordVerifyOTPScreenState
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(
-        builder: (context) => LoginScreen(),
+        builder: (context) => ResetPasswordScreen(),
+      ), // Replace with actual SignUpScreen
+      (predicate) => false,
+    );
+  }
+
+  void _onTapverifyButton() {
+    // Navigate to the Sign Up screen
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ResetPasswordScreen(),
       ), // Replace with actual SignUpScreen
       (predicate) => false,
     );
