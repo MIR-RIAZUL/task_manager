@@ -4,6 +4,7 @@ import 'package:task_manager/UI/widgets/screen_backround.dart';
 
 import 'Sign_up_screen.dart';
 import 'forgot_password_verify_email_screen.dart';
+import 'main_nav_bar_holder_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -48,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 20),
                   FilledButton(
-                    onPressed: () {},
+                    onPressed: _ontaploginbuttin,
                     child: Icon(Icons.arrow_circle_right_outlined),
                   ),
                   const SizedBox(height: 36),
@@ -108,6 +109,16 @@ class _LoginScreenState extends State<LoginScreen> {
       MaterialPageRoute(
         builder: (context) => ForgotPasswordVerifyEmailScreen(),
       ), // Replace with actual SignUpScreen
+    );
+  }
+
+  void _ontaploginbuttin() {
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MainNavBarHolderScreen(),
+      ), // Replace with actual SignUpScreen
+      (predicate) => false,
     );
   }
 
